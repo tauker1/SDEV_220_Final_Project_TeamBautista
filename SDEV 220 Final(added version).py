@@ -2,10 +2,15 @@
 import tkinter
 from tkinter import *
 
+root = Tk()
+root.title('Burger Smash')
+root.geometry('500x500')
+
 # Creating the lists
 toppings = ['Lettuce', 'Tomato', 'Onion', 'Bacon', 'Pickles']
 sides = ['Fries', 'Chips', 'Mozzarella Sticks', 'Fried Pickles']
 drinks = ['Soda', 'Coffee', 'Water', 'Beer']
+EXIT = 'ZZZ'
 
 # Creating the dictionary
 menu_dict = {'Toppings': [], 'Sides': [], 'Drinks': []}
@@ -74,6 +79,23 @@ def display_menu(menu_dict):
 display_menu(menu_dict)
 
 
-def add_to_burger():
-    pass
-    input('Click the toppings you would like to add: ')
+def add_to_burger(toppings):
+    total = 0
+    for topping in toppings:
+        user_input = input('Please enter the toppings you would like to add: ')
+
+        if user_input == 'ZZZ':
+            break
+
+        if topping == 'Lettuce':
+            total += 0.40
+        elif topping == 'Tomato':
+            total += 0.50
+        else:
+            print(user_input)
+
+
+add_to_burger(toppings)
+
+
+root.mainloop()
