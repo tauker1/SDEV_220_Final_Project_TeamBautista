@@ -1,0 +1,5 @@
+blog
+└───templates
+    └───blog
+            base.html
+            post_list.html
